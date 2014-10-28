@@ -9,12 +9,14 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
-
+@synthesize ChatViewControll;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    ChatViewControll=[[chatViewController alloc]init];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    [self.window setRootViewController:ChatViewControll];
     [self.window makeKeyAndVisible];
     return YES;
 }

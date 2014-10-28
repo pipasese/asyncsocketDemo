@@ -19,6 +19,10 @@
 		1C484BE6197CB352004F6009 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C484BCE197CB352004F6009 /* UIKit.framework */; };
 		1C484BEE197CB352004F6009 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1C484BEC197CB352004F6009 /* InfoPlist.strings */; };
 		1C484BF0197CB352004F6009 /* asyncsocketDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C484BEF197CB352004F6009 /* asyncsocketDemoTests.m */; };
+		1C484BFE197CB3E1004F6009 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C484BFB197CB3E1004F6009 /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1C484BFF197CB3E1004F6009 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C484BFD197CB3E1004F6009 /* AsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1C484C01197CB3EE004F6009 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C484C00197CB3EE004F6009 /* CFNetwork.framework */; };
+		1C484C04197CB62A004F6009 /* chatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C484C03197CB62A004F6009 /* chatViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,13 @@
 		1C484BEB197CB352004F6009 /* asyncsocketDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "asyncsocketDemoTests-Info.plist"; sourceTree = "<group>"; };
 		1C484BED197CB352004F6009 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1C484BEF197CB352004F6009 /* asyncsocketDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = asyncsocketDemoTests.m; sourceTree = "<group>"; };
+		1C484BFA197CB3E1004F6009 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		1C484BFB197CB3E1004F6009 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		1C484BFC197CB3E1004F6009 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		1C484BFD197CB3E1004F6009 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		1C484C00197CB3EE004F6009 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1C484C02197CB62A004F6009 /* chatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chatViewController.h; sourceTree = "<group>"; };
+		1C484C03197CB62A004F6009 /* chatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chatViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C484C01197CB3EE004F6009 /* CFNetwork.framework in Frameworks */,
 				1C484BCD197CB352004F6009 /* CoreGraphics.framework in Frameworks */,
 				1C484BCF197CB352004F6009 /* UIKit.framework in Frameworks */,
 				1C484BCB197CB352004F6009 /* Foundation.framework in Frameworks */,
@@ -96,6 +108,7 @@
 		1C484BC9197CB352004F6009 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C484C00197CB3EE004F6009 /* CFNetwork.framework */,
 				1C484BCA197CB352004F6009 /* Foundation.framework */,
 				1C484BCC197CB352004F6009 /* CoreGraphics.framework */,
 				1C484BCE197CB352004F6009 /* UIKit.framework */,
@@ -107,8 +120,11 @@
 		1C484BD0197CB352004F6009 /* asyncsocketDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1C484BF9197CB3E1004F6009 /* sourceAsyncSocket */,
 				1C484BD9197CB352004F6009 /* AppDelegate.h */,
 				1C484BDA197CB352004F6009 /* AppDelegate.m */,
+				1C484C02197CB62A004F6009 /* chatViewController.h */,
+				1C484C03197CB62A004F6009 /* chatViewController.m */,
 				1C484BDC197CB352004F6009 /* Images.xcassets */,
 				1C484BD1197CB352004F6009 /* Supporting Files */,
 			);
@@ -142,6 +158,17 @@
 				1C484BEC197CB352004F6009 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1C484BF9197CB3E1004F6009 /* sourceAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				1C484BFA197CB3E1004F6009 /* AsyncSocket.h */,
+				1C484BFB197CB3E1004F6009 /* AsyncSocket.m */,
+				1C484BFC197CB3E1004F6009 /* AsyncUdpSocket.h */,
+				1C484BFD197CB3E1004F6009 /* AsyncUdpSocket.m */,
+			);
+			path = sourceAsyncSocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,8 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C484BFE197CB3E1004F6009 /* AsyncSocket.m in Sources */,
 				1C484BDB197CB352004F6009 /* AppDelegate.m in Sources */,
+				1C484C04197CB62A004F6009 /* chatViewController.m in Sources */,
 				1C484BD7197CB352004F6009 /* main.m in Sources */,
+				1C484BFF197CB3E1004F6009 /* AsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +471,7 @@
 				1C484BF5197CB352004F6009 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1C484BF6197CB352004F6009 /* Build configuration list for PBXNativeTarget "asyncsocketDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +480,7 @@
 				1C484BF8197CB352004F6009 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

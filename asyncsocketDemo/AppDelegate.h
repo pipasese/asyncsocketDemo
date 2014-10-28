@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "chatViewController.h"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+{
+    chatViewController *ChatViewControll;
+}
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) chatViewController *ChatViewControll;
+
 
 @end
